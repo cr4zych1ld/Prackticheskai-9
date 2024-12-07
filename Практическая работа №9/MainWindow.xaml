@@ -1,0 +1,76 @@
+﻿<Window x:Class="Практическая_работа__9.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Практическая_работа__9"
+        mc:Ignorable="d"
+        Title="Практическая работа №9" Height="450" Width="800" WindowStartupLocation="CenterScreen"  ResizeMode="NoResize" Icon="/game074.ico">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="425*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="550*"/>
+            <ColumnDefinition Width="250*"/>
+        </Grid.ColumnDefinitions>
+
+        <Menu Grid.Row="0" Grid.ColumnSpan="2">
+
+            <MenuItem Header="Файл" Margin="3">
+                <MenuItem Header="Вывести названия фильмов" Click="LoadMovies_Click"/>
+                <MenuItem Header="Показать фильмы по жанру" Click="ShowMoviesByGenre_Click"/>
+                <MenuItem Header="Записать информацию о фильме" Click="CreateInfoFilmButton_Click"/>
+                <MenuItem Header="Удалить строчку" Click="DeleteStrokaButton_Click"/>
+                <MenuItem Header="Очистка" Click="ClearButton_Click"/>
+            </MenuItem>
+
+            <MenuItem Header="Справка" Margin="3">
+                <MenuItem Header="О программе" Click="InfoProga_Click"/>
+                <MenuItem Header="О создателе" Click="InfoRazrab_Click"/>
+            </MenuItem>
+
+            <MenuItem Header="Выход" Click="CloseButton_Click" Margin="3"/>
+
+        </Menu>
+
+        <StackPanel Grid.Row="1" Grid.Column="0">
+
+            <TextBlock Text="Библиотека фильмов" FontSize="24" FontWeight="Bold" Margin="140,0,140,10"/>
+
+            <Button Content="Вывести названия фильмов" Click="LoadMovies_Click" Margin="170,0,170,10"/>
+            <Button Content="Показать фильмы по жанру" Click="ShowMoviesByGenre_Click" Margin="170,0,170,10"/>
+
+            <Label Content="Название жанра" FontSize="16" FontWeight="Bold" Width="140"/>
+
+            <TextBox x:Name="GenreTextBox" ToolTip="Введите жанр" Width="200" Margin="0,0,0,10"/>
+            <ListBox x:Name="OutputListBox" Height="220" Margin="10,0" Background="#FFEAEAEA"/>
+
+        </StackPanel>
+
+        <GroupBox Header="Работа с библиотекой" Grid.Row="1" Grid.Column="1">
+            <StackPanel>
+                <Label Content="Название фильма" Width="110" Margin="0,0,0,10"/>
+                <TextBox x:Name="NameFilm" Width="150" Margin="0,0,0,10"/>
+
+                <Label Content="Название жанра фильма" Width="150" Margin="0,0,0,10"/>
+                <TextBox x:Name="NameGenreFilm" Width="150" Margin="0,0,0,10"/>
+
+                <Label Content="Год выпуска фильма" Width="130" Margin="0,0,0,10"/>
+                <TextBox x:Name="YearFilm" Width="100" Margin="0,0,0,10"/>
+
+                <Label Content="Продолжительность просмотра фильма" Width="230" Margin="0,0,0,10"/>
+                <TextBox x:Name="TimeFilm" Width="100" Margin="0,0,0,10"/>
+
+                <Button Content="Записать информацию о фильме" Click="CreateInfoFilmButton_Click" Width="190" Margin="0,0,0,10"/>
+
+                <Label Content="Номер строки" Width="90" Margin="0,0,0,5"/>
+                <TextBox x:Name="NumberStrock" Width="100" Margin="0,0,0,5"/>
+                <Button Content="Удалить строчку" ToolTip="Удалить строчку с информацией о фильме" Click="DeleteStrokaButton_Click" Width="110"/>
+            </StackPanel>
+        </GroupBox>
+
+    </Grid>
+</Window>
